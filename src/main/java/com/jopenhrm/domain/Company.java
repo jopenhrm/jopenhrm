@@ -56,9 +56,8 @@ public class Company implements Serializable {
     @Column(name = "update_date")
     private ZonedDateTime updateDate;
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private Address primaryAddress;
+    @Column(name = "address")
+    private String address;
 
     @OneToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -99,7 +98,21 @@ public class Company implements Serializable {
         this.logo = logo;
     }
 
-    public String getWebsite() {
+    /**
+	 * @return the address
+	 */
+	public String getAddress() {
+		return address;
+	}
+
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getWebsite() {
         return website;
     }
 
@@ -175,20 +188,7 @@ public class Company implements Serializable {
 
     public void setUpdateDate(ZonedDateTime updateDate) {
         this.updateDate = updateDate;
-    }
-
-    public Address getPrimaryAddress() {
-        return primaryAddress;
-    }
-
-    public Company primaryAddress(Address address) {
-        this.primaryAddress = address;
-        return this;
-    }
-
-    public void setPrimaryAddress(Address address) {
-        this.primaryAddress = address;
-    }
+    }   
 
     public Set<BusinessDomain> getBusinessDomains() {
         return businessDomains;

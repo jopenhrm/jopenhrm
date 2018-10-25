@@ -27,20 +27,34 @@ DROP TABLE IF EXISTS `company`;
 
 CREATE TABLE `company` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `logo` varchar(255) DEFAULT NULL,
-  `website` varchar(255) DEFAULT NULL,
-  `fax` varchar(255) DEFAULT NULL,
-  `phone_number` varchar(255) DEFAULT NULL,
-  `company_size` varchar(255) DEFAULT NULL,
-  `created_date` datetime,
-  `update_date` datetime,
-  `primary_address_id` bigint(20) DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `logo` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `website` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `fax` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `phone_number` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `company_size` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   `establish_date` datetime DEFAULT NULL,
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `business_unit` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `business_domain` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `company_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `ux_company_primary_address_id` (`primary_address_id`),
-  CONSTRAINT `fk_company_primary_address_id` FOREIGN KEY (`primary_address_id`) REFERENCES `address` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `fk_business_domain_company_id` (`company_id`),
+  CONSTRAINT `fk_business_domain_company_id` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `company` WRITE;
 /*!40000 ALTER TABLE `company` DISABLE KEYS */;
