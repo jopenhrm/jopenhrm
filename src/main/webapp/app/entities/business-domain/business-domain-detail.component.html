@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="businessDomain">
+            <h2><span jhiTranslate="jopenhrmApp.businessDomain.detail.title">Business Domain</span> {{businessDomain.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jopenhrmApp.businessDomain.name">Name</span></dt>
+                <dd>
+                    <span>{{businessDomain.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="jopenhrmApp.businessDomain.company">Company</span></dt>
+                <dd>
+                    <div *ngIf="businessDomain.company">
+                        <a [routerLink]="['/company', businessDomain.company?.id, 'view']">{{businessDomain.company?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/business-domain', businessDomain.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

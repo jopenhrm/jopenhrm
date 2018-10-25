@@ -1,0 +1,23 @@
+
+{
+    "jopenhrmApp": {
+        "businessDomain" : {
+            "home": {
+                "title": "Business Domains",
+                "createLabel": "Create a new Business Domain",
+                "createOrEditLabel": "Create or edit a Business Domain"
+            },
+            "created": "A new Business Domain is created with identifier {{ param }}",
+            "updated": "A Business Domain is updated with identifier {{ param }}",
+            "deleted": "A Business Domain is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Business Domain {{ id }}?"
+            },
+            "detail": {
+                "title": "Business Domain"
+            },
+            "name": "Name",
+            "company": "Company"
+        }
+    }
+}

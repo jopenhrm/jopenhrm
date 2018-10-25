@@ -1,0 +1,23 @@
+
+{
+    "jopenhrmApp": {
+        "businessDomain" : {
+            "home": {
+                "title": "Business Domains",
+                "createLabel": "Thêm mới một Business Domain",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Business Domain"
+            },
+            "created": "Một Business Domain mới được tạo với định danh {{ param }}",
+            "updated": "Một Business Domain cập nhật với định danh {{ param }}",
+            "deleted": "Một Business Domain đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Business Domain {{ id }}?"
+            },
+            "detail": {
+                "title": "Business Domain"
+            },
+            "name": "Name",
+            "company": "Company"
+        }
+    }
+}

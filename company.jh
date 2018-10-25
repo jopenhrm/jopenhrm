@@ -1,0 +1,30 @@
+enum CompanySize {
+  LESS_THAN_10,
+  MORE_THAN_10_LESS_THAN_50,
+  MORE_THAN_50_LESS_THAN_100,
+  MORE_THAN_100_LESS_THAN_500,
+  MORE_THAN_500
+}
+
+entity Company {
+  name String,
+  logo String,
+  website String,
+  fax String,
+  phoneNumber String,
+  companySize CompanySize,
+  createdDate ZonedDateTime,
+  updateDate ZonedDateTime
+}
+
+entity BusinessDomain {
+  name String
+}
+
+relationship OneToMany {
+	Company{businessDomains} to BusinessDomain
+}
+
+relationship OneToOne {
+    Company{primaryAddress} to Address
+}

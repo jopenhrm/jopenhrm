@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="company">
+            <h2><span jhiTranslate="jopenhrmApp.company.detail.title">Company</span> {{company.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jopenhrmApp.company.name">Name</span></dt>
+                <dd>
+                    <span>{{company.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="jopenhrmApp.company.logo">Logo</span></dt>
+                <dd>
+                    <span>{{company.logo}}</span>
+                </dd>
+                <dt><span jhiTranslate="jopenhrmApp.company.website">Website</span></dt>
+                <dd>
+                    <span>{{company.website}}</span>
+                </dd>
+                <dt><span jhiTranslate="jopenhrmApp.company.fax">Fax</span></dt>
+                <dd>
+                    <span>{{company.fax}}</span>
+                </dd>
+                <dt><span jhiTranslate="jopenhrmApp.company.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{company.phoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="jopenhrmApp.company.companySize">Company Size</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jopenhrmApp.CompanySize.' + company.companySize}}">{{company.companySize}}</span>
+                </dd>
+                <dt><span jhiTranslate="jopenhrmApp.company.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{company.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jopenhrmApp.company.updateDate">Update Date</span></dt>
+                <dd>
+                    <span>{{company.updateDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jopenhrmApp.company.primaryAddress">Primary Address</span></dt>
+                <dd>
+                    <div *ngIf="company.primaryAddress">
+                        <a [routerLink]="['/address', company.primaryAddress?.id, 'view']">{{company.primaryAddress?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/company', company.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
