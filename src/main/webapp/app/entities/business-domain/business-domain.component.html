@@ -1,6 +1,6 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="jopenhrmApp.businessDomain.home.title">Business Domains</span>
+        <span jhiTranslate="jopenhrmApp.businessDomain.home.title">Business Domains Configuration</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-business-domain" [routerLink]="['/business-domain/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
             <span  jhiTranslate="jopenhrmApp.businessDomain.home.createLabel">
@@ -16,19 +16,13 @@
             <tr>
             <th><span jhiTranslate="global.field.id">ID</span></th>
             <th><span jhiTranslate="jopenhrmApp.businessDomain.name">Name</span></th>
-            <th><span jhiTranslate="jopenhrmApp.businessDomain.company">Company</span></th>
             <th></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let businessDomain of businessDomains ;trackBy: trackId">
                 <td><a [routerLink]="['/business-domain', businessDomain.id, 'view' ]">{{businessDomain.id}}</a></td>
-                <td>{{businessDomain.name}}</td>
-                <td>
-                    <div *ngIf="businessDomain.company">
-                        <a [routerLink]="['../company', businessDomain.company?.id, 'view' ]" >{{businessDomain.company?.id}}</a>
-                    </div>
-                </td>
+                <td>{{businessDomain.name}}</td>                
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

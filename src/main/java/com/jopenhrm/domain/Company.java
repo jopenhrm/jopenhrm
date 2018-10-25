@@ -57,7 +57,7 @@ public class Company implements Serializable {
     @JoinColumn(unique = true)
     private Address primaryAddress;
 
-    @OneToMany(mappedBy = "company")
+    @OneToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<BusinessDomain> businessDomains = new HashSet<>();
 
@@ -193,18 +193,6 @@ public class Company implements Serializable {
 
     public Company businessDomains(Set<BusinessDomain> businessDomains) {
         this.businessDomains = businessDomains;
-        return this;
-    }
-
-    public Company addBusinessDomains(BusinessDomain businessDomain) {
-        this.businessDomains.add(businessDomain);
-        businessDomain.setCompany(this);
-        return this;
-    }
-
-    public Company removeBusinessDomains(BusinessDomain businessDomain) {
-        this.businessDomains.remove(businessDomain);
-        businessDomain.setCompany(null);
         return this;
     }
 

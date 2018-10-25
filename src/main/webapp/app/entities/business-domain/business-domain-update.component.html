@@ -15,13 +15,13 @@
                         [(ngModel)]="businessDomain.name" />
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label class="form-control-label" jhiTranslate="jopenhrmApp.businessDomain.company" for="field_company">Company</label>
                     <select class="form-control" id="field_company" name="company" [(ngModel)]="businessDomain.company" >
                         <option [ngValue]="null"></option>
                         <option [ngValue]="companyOption.id === businessDomain.company?.id ? businessDomain.company : companyOption" *ngFor="let companyOption of companies; trackBy: trackCompanyById">{{companyOption.id}}</option>
                     </select>
-                </div>
+                </div> -->
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">

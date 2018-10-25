@@ -21,7 +21,6 @@
             <th><span jhiTranslate="jopenhrmApp.company.fax">Fax</span></th>
             <th><span jhiTranslate="jopenhrmApp.company.phoneNumber">Phone Number</span></th>
             <th><span jhiTranslate="jopenhrmApp.company.companySize">Company Size</span></th>
-            <th><span jhiTranslate="jopenhrmApp.company.createdDate">Created Date</span></th>
             <th><span jhiTranslate="jopenhrmApp.company.updateDate">Update Date</span></th>
             <th><span jhiTranslate="jopenhrmApp.company.primaryAddress">Primary Address</span></th>
             <th></th>
@@ -36,8 +35,7 @@
                 <td>{{company.fax}}</td>
                 <td>{{company.phoneNumber}}</td>
                 <td jhiTranslate="{{'jopenhrmApp.CompanySize.' + company.companySize}}">{{company.companySize}}</td>
-                <td>{{company.createdDate | date:'medium'}}</td>
-                <td>{{company.updateDate | date:'medium'}}</td>
+                <td>{{company.createdDate | date:'medium'}}</td>                
                 <td>
                     <div *ngIf="company.primaryAddress">
                         <a [routerLink]="['../address', company.primaryAddress?.id, 'view' ]" >{{company.primaryAddress?.id}}</a>
