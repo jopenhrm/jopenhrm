@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import * as moment from 'moment';
@@ -27,7 +27,8 @@ export class CompanyUpdateComponent implements OnInit {
         private jhiAlertService: JhiAlertService,
         private companyService: CompanyService,
         private addressService: AddressService,
-        private activatedRoute: ActivatedRoute
+        private activatedRoute: ActivatedRoute,
+        private router: Router
     ) {}
 
     ngOnInit() {
@@ -53,7 +54,7 @@ export class CompanyUpdateComponent implements OnInit {
     }
 
     previousState() {
-        window.history.back();
+        this.router.navigate(['/company']);
     }
 
     save() {
