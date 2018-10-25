@@ -43,6 +43,8 @@ public class CacheConfiguration {
             cm.createCache(com.jopenhrm.domain.Company.class.getName(), jcacheConfiguration);
             cm.createCache(com.jopenhrm.domain.Company.class.getName() + ".businessDomains", jcacheConfiguration);
             cm.createCache(com.jopenhrm.domain.BusinessDomain.class.getName(), jcacheConfiguration);
+            cm.createCache(com.jopenhrm.domain.BusinessUnit.class.getName(), jcacheConfiguration);
+            cm.createCache(com.jopenhrm.domain.Department.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
