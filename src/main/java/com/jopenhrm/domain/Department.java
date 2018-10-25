@@ -1,7 +1,6 @@
 package com.jopenhrm.domain;
 
 import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,9 +12,9 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 @Entity
-@Table(name = "business_unit")
+@Table(name = "department")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class BusinessUnit implements Serializable {
+public class Department implements Serializable {
 
 	/**
 	 * 
@@ -28,9 +27,6 @@ public class BusinessUnit implements Serializable {
 	
 	@Column(name = "name")
 	private String name;
-	
-	@Column(name = "address")
-	private String address;
 
 	/**
 	 * @return the id
@@ -60,19 +56,6 @@ public class BusinessUnit implements Serializable {
 		this.name = name;
 	}
 
-	/**
-	 * @return the address
-	 */
-	public String getAddress() {
-		return address;
-	}
-
-	/**
-	 * @param address the address to set
-	 */
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
 	 
 }
+
