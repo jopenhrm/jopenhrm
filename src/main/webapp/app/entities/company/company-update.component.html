@@ -1,80 +1,88 @@
-<div class="row justify-content-center">
-    <div class="col-8">
-        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
-            <h2 id="jhi-company-heading" jhiTranslate="jopenhrmApp.company.home.createOrEditLabel">Create or edit a Company</h2>
-            <div>
-                <jhi-alert-error></jhi-alert-error>
-                <div class="form-group" [hidden]="!company.id">
-                    <label for="id" jhiTranslate="global.field.id">ID</label>
-                    <input type="text" class="form-control" id="id" name="id"
-                        [(ngModel)]="company.id" readonly />
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jopenhrmApp.company.name" for="field_name">Name</label>
-                    <input type="text" class="form-control" name="name" id="field_name"
-                        [(ngModel)]="company.name" required />
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jopenhrmApp.company.logo" for="field_logo">Logo</label>
-                    <input type="text" class="form-control" name="logo" id="field_logo"
-                        [(ngModel)]="company.logo" />
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jopenhrmApp.company.website" for="field_website">Website</label>
-                    <input type="text" class="form-control" name="website" id="field_website"
-                        [(ngModel)]="company.website" />
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jopenhrmApp.company.fax" for="field_fax">Fax</label>
-                    <input type="text" class="form-control" name="fax" id="field_fax"
-                        [(ngModel)]="company.fax" />
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jopenhrmApp.company.phoneNumber" for="field_phoneNumber">Phone Number</label>
-                    <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
-                        [(ngModel)]="company.phoneNumber" />
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jopenhrmApp.company.companySize" for="field_companySize">Company Size</label>
-                    <select class="form-control" name="companySize" [(ngModel)]="company.companySize" id="field_companySize" >
-                        <option value="LESS_THAN_10">{{'jopenhrmApp.CompanySize.LESS_THAN_10' | translate}}</option>
-                        <option value="MORE_THAN_10_LESS_THAN_50">{{'jopenhrmApp.CompanySize.MORE_THAN_10_LESS_THAN_50' | translate}}</option>
-                        <option value="MORE_THAN_50_LESS_THAN_100">{{'jopenhrmApp.CompanySize.MORE_THAN_50_LESS_THAN_100' | translate}}</option>
-                        <option value="MORE_THAN_100_LESS_THAN_500">{{'jopenhrmApp.CompanySize.MORE_THAN_100_LESS_THAN_500' | translate}}</option>
-                        <option value="MORE_THAN_500">{{'jopenhrmApp.CompanySize.MORE_THAN_500' | translate}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jopenhrmApp.company.createdDate" for="field_createdDate">Created Date</label>
-                    <div class="d-flex">
-                        <input id="field_createdDate" type="datetime-local" class="form-control" name="createdDate" [(ngModel)]="createdDate"
-                        />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jopenhrmApp.company.updateDate" for="field_updateDate">Update Date</label>
-                    <div class="d-flex">
-                        <input id="field_updateDate" type="datetime-local" class="form-control" name="updateDate" [(ngModel)]="updateDate"
-                        />
-                    </div>
-                </div>
+<h2 id="jhi-company-heading" jhiTranslate="jopenhrmApp.company.home.createOrEditLabel">Create or edit a Company</h2>
+<ngb-tabset>
+  <ngb-tab title="Info">
+      <ng-template ngbTabContent>
+      <div class="row">
+          <div class="col-8">
+              <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+                  <div>
+                      <jhi-alert-error></jhi-alert-error>
+                      <div class="form-group" [hidden]="!company.id">
+                          <label for="id" jhiTranslate="global.field.id">ID</label>
+                          <input type="text" class="form-control" id="id" name="id"
+                              [(ngModel)]="company.id" readonly />
+                      </div>
+                      <div class="form-group">
+                          <label class="form-control-label" jhiTranslate="jopenhrmApp.company.name" for="field_name">Name</label>
+                          <input type="text" class="form-control" name="name" id="field_name"
+                              [(ngModel)]="company.name" required />
+                      </div>
+                      <div class="form-group">
+                          <label class="form-control-label" jhiTranslate="jopenhrmApp.company.logo" for="field_logo">Logo</label>
+                          <input type="text" class="form-control" name="logo" id="field_logo"
+                              [(ngModel)]="company.logo" />
+                      </div>
+                      <div class="form-group">
+                          <label class="form-control-label" jhiTranslate="jopenhrmApp.company.website" for="field_website">Website</label>
+                          <input type="text" class="form-control" name="website" id="field_website"
+                              [(ngModel)]="company.website" />
+                      </div>
+                      <div class="form-group">
+                          <label class="form-control-label" jhiTranslate="jopenhrmApp.company.fax" for="field_fax">Fax</label>
+                          <input type="text" class="form-control" name="fax" id="field_fax"
+                              [(ngModel)]="company.fax" />
+                      </div>
+                      <div class="form-group">
+                          <label class="form-control-label" jhiTranslate="jopenhrmApp.company.phoneNumber" for="field_phoneNumber">Phone Number</label>
+                          <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                              [(ngModel)]="company.phoneNumber" />
+                      </div>
+                      <div class="form-group">
+                          <label class="form-control-label" jhiTranslate="jopenhrmApp.company.companySize" for="field_companySize">Company Size</label>
+                          <select class="form-control" name="companySize" [(ngModel)]="company.companySize" id="field_companySize" >
+                              <option value="LESS_THAN_10">{{'jopenhrmApp.CompanySize.LESS_THAN_10' | translate}}</option>
+                              <option value="MORE_THAN_10_LESS_THAN_50">{{'jopenhrmApp.CompanySize.MORE_THAN_10_LESS_THAN_50' | translate}}</option>
+                              <option value="MORE_THAN_50_LESS_THAN_100">{{'jopenhrmApp.CompanySize.MORE_THAN_50_LESS_THAN_100' | translate}}</option>
+                              <option value="MORE_THAN_100_LESS_THAN_500">{{'jopenhrmApp.CompanySize.MORE_THAN_100_LESS_THAN_500' | translate}}</option>
+                              <option value="MORE_THAN_500">{{'jopenhrmApp.CompanySize.MORE_THAN_500' | translate}}</option>
+                          </select>
+                      </div>
+                      <div class="form-group">
+                          <label class="form-control-label" jhiTranslate="jopenhrmApp.company.createdDate" for="field_createdDate">Created Date</label>
+                          <div class="d-flex">
+                              <input id="field_createdDate" type="datetime-local" class="form-control" name="createdDate" [(ngModel)]="createdDate"
+                              />
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="form-control-label" jhiTranslate="jopenhrmApp.company.updateDate" for="field_updateDate">Update Date</label>
+                          <div class="d-flex">
+                              <input id="field_updateDate" type="datetime-local" class="form-control" name="updateDate" [(ngModel)]="updateDate"
+                              />
+                          </div>
+                      </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jopenhrmApp.company.primaryAddress" for="field_primaryAddress">Primary Address</label>
-                    <select class="form-control" id="field_primaryAddress" name="primaryAddress" [(ngModel)]="company.primaryAddress">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="addressOption.id === company.primaryAddress?.id ? company.primaryAddress : addressOption" *ngFor="let addressOption of primaryaddresses; trackBy: trackAddressById">{{addressOption.id}}</option>
-                    </select>
-                </div>
-            </div>
-            <div>
-                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
-                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
-                </button>
-                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
-                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
+                      <div class="form-group">
+                          <label class="form-control-label" jhiTranslate="jopenhrmApp.company.primaryAddress" for="field_primaryAddress">Primary Address</label>
+                          <select class="form-control" id="field_primaryAddress" name="primaryAddress" [(ngModel)]="company.primaryAddress">
+                              <option [ngValue]="null"></option>
+                              <option [ngValue]="addressOption.id === company.primaryAddress?.id ? company.primaryAddress : addressOption" *ngFor="let addressOption of primaryaddresses; trackBy: trackAddressById">{{addressOption.id}}</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div>
+                      <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                          <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                      </button>
+                      <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                          <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                      </button>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <ng-template>
+  </ngb-tab>
+  <ngb-tab title="Addresses">
+  </ngb-tab>
+<ngb-tabset>
