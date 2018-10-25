@@ -1,5 +1,5 @@
 # JOpenHRM
-Made with love by @duy.chung. Completely free !!!
+Made with love. Completely free !!!
 ## Development
 
 Before you can build this project, you must install and configure the following dependencies on your machine:
