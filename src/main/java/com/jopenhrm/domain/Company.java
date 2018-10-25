@@ -47,6 +47,9 @@ public class Company implements Serializable {
     @Column(name = "company_size")
     private CompanySize companySize;
 
+    @Column(name = "establish_date")
+    private ZonedDateTime establishDate;
+    
     @Column(name = "created_date")
     private ZonedDateTime createdDate;
 
@@ -199,9 +202,24 @@ public class Company implements Serializable {
     public void setBusinessDomains(Set<BusinessDomain> businessDomains) {
         this.businessDomains = businessDomains;
     }
+    
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
-    @Override
+    /**
+	 * @return the establishDate
+	 */
+	public ZonedDateTime getEstablishDate() {
+		return establishDate;
+	}
+
+	/**
+	 * @param establishDate the establishDate to set
+	 */
+	public void setEstablishDate(ZonedDateTime establishDate) {
+		this.establishDate = establishDate;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
