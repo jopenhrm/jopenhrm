@@ -51,22 +51,22 @@ export class CompanyService {
 
     private convertDateFromClient(company: ICompany): ICompany {
         const copy: ICompany = Object.assign({}, company, {
-            createdDate: company.createdDate != null && company.createdDate.isValid() ? company.createdDate.toJSON() : null,
-            updateDate: company.updateDate != null && company.updateDate.isValid() ? company.updateDate.toJSON() : null
+            establishDate: company.establishDate != null && company.establishDate.isValid() ? company.establishDate.toJSON() : null,
+            // updateDate: company.updateDate != null && company.updateDate.isValid() ? company.updateDate.toJSON() : null
         });
         return copy;
     }
 
     private convertDateFromServer(res: EntityResponseType): EntityResponseType {
-        res.body.createdDate = res.body.createdDate != null ? moment(res.body.createdDate) : null;
-        res.body.updateDate = res.body.updateDate != null ? moment(res.body.updateDate) : null;
+        res.body.establishDate = res.body.establishDate != null ? moment(res.body.establishDate) : null;
+        // res.body.updateDate = res.body.updateDate != null ? moment(res.body.updateDate) : null;
         return res;
     }
 
     private convertDateArrayFromServer(res: EntityArrayResponseType): EntityArrayResponseType {
         res.body.forEach((company: ICompany) => {
-            company.createdDate = company.createdDate != null ? moment(company.createdDate) : null;
-            company.updateDate = company.updateDate != null ? moment(company.updateDate) : null;
+            company.establishDate = company.establishDate != null ? moment(company.establishDate) : null;
+            // company.updateDate = company.updateDate != null ? moment(company.updateDate) : null;
         });
         return res;
     }

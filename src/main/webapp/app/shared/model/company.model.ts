@@ -18,7 +18,7 @@ export interface ICompany {
     fax?: string;
     phoneNumber?: string;
     companySize?: CompanySize;
-    createdDate?: Moment;
+    establishDate?: Moment;
     updateDate?: Moment;
     primaryAddress?: IAddress;
     businessDomains?: IBusinessDomain[];

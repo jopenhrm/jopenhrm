@@ -23,6 +23,7 @@
             "phoneNumber": "Phone Number",
             "companySize": "Company Size",
             "createdDate": "Created Date",
+            "establishDate": "Establist Date",
             "updateDate": "Update Date",
             "primaryAddress": "Primary Address",
             "businessDomains": "Business Domains"

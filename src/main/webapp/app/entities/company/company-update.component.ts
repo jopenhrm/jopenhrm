@@ -18,10 +18,8 @@ import { AddressService } from 'app/entities/address';
 export class CompanyUpdateComponent implements OnInit {
     private _company: ICompany;
     isSaving: boolean;
-
     primaryaddresses: IAddress[];
-    createdDate: string;
-    updateDate: string;
+    establishDate: string;
 
     constructor(
         private jhiAlertService: JhiAlertService,
@@ -58,9 +56,7 @@ export class CompanyUpdateComponent implements OnInit {
     }
 
     save() {
-        this.isSaving = true;
-        this.company.createdDate = moment(this.createdDate, DATE_TIME_FORMAT);
-        this.company.updateDate = moment(this.updateDate, DATE_TIME_FORMAT);
+        this.isSaving = true;        
         if (this.company.id !== undefined) {
             this.subscribeToSaveResponse(this.companyService.update(this.company));
         } else {
@@ -94,7 +90,6 @@ export class CompanyUpdateComponent implements OnInit {
 
     set company(company: ICompany) {
         this._company = company;
-        this.createdDate = moment(company.createdDate).format(DATE_TIME_FORMAT);
-        this.updateDate = moment(company.updateDate).format(DATE_TIME_FORMAT);
+        this.establishDate = moment(company.establishDate).format(DATE_TIME_FORMAT);
     }
 }
