@@ -19,8 +19,7 @@ export interface ICompany {
     phoneNumber?: string;
     companySize?: CompanySize;
     establishDate?: Moment;
-    updateDate?: Moment;
-    primaryAddress?: IAddress;
+    address?: string;
     businessDomains?: IBusinessDomain[];
 }
 
@@ -33,9 +32,8 @@ export class Company implements ICompany {
         public fax?: string,
         public phoneNumber?: string,
         public companySize?: CompanySize,
-        public createdDate?: Moment,
-        public updateDate?: Moment,
-        public primaryAddress?: IAddress,
+        public establishDate?: Moment,        
+        public address?: string,
         public businessDomains?: IBusinessDomain[]
     ) {}
 }
