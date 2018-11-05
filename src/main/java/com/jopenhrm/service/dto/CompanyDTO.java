@@ -10,6 +10,7 @@ public class CompanyDTO {
     private String fax;
     private String phoneNumber;
     private CompanySize companySize;
+    private String address;
 	/**
 	 * @return the name
 	 */
@@ -82,5 +83,12 @@ public class CompanyDTO {
 	public void setCompanySize(CompanySize companySize) {
 		this.companySize = companySize;
 	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
     
+	
 }
